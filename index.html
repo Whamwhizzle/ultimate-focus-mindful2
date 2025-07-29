@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REALITY CHECK - Stop Wasting Your Life</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#FF3333">
+</head>
+<body>
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button class="nav-btn nav-btn--top-left" id="viewAllThoughtsBtn">
+            <span class="nav-icon">📖</span>
+            <span class="nav-text">View All Deep Thoughts</span>
+        </button>
+        <button class="nav-btn nav-btn--top-right" id="mindfulCenterBtn">
+            <span class="nav-icon">🧘</span>
+            <span class="nav-text">Mindful Center</span>
+        </button>
+        <button class="nav-btn nav-btn--bottom-right" id="clearMindBtn">
+            <span class="nav-icon">📝</span>
+            <span class="nav-text">Clear My Mind</span>
+        </button>
+    </div>
+
+    <!-- Main Distraction Block Screen -->
+    <div id="blockScreen" class="screen active">
+        <div class="reality-check-header">
+            <div class="shock-indicator">🚨 DISTRACTION DETECTED 🚨</div>
+            <div class="blocked-site-info">
+                <span class="blocked-label">You tried to access:</span>
+                <span class="blocked-site" id="blockedSite">Unknown Site</span>
+            </div>
+            <div class="redirect-count">
+                <span class="count-label">Times blocked today:</span>
+                <span class="count-number" id="todayBlocks">1</span>
+            </div>
+        </div>
+
+        <div class="harsh-reality-section">
+            <div class="reality-check-message" id="realityMessage">
+                🛑 STOP! You're about to waste your life again!
+            </div>
+            
+            <div class="tough-love-quote" id="toughLoveQuote">
+                "Growth is painful. Change is painful. But nothing is as painful as staying stuck somewhere you don't belong."
+            </div>
+        </div>
+
+        <div class="choice-architecture">
+            <h2 class="choice-title">WHAT WILL YOU CHOOSE?</h2>
+            <div class="choice-buttons">
+                <button class="choice-btn face-reality-btn" id="faceRealityBtn">
+                    <span class="btn-icon">💪</span>
+                    <span class="btn-text">FACE REALITY</span>
+                    <span class="btn-subtitle">Be the person you want to become</span>
+                </button>
+                <button class="choice-btn waste-time-btn" id="wasteTimeBtn">
+                    <span class="btn-icon">💀</span>
+                    <span class="btn-text">KEEP WASTING TIME</span>
+                    <span class="btn-subtitle">Stay mediocre forever</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="accountability-section">
+            <h3 class="accountability-title">ASK YOURSELF:</h3>
+            <div class="accountability-question" id="accountabilityQuestion">
+                What would you tell your 10-year-old self about this moment?
+            </div>
+        </div>
+
+        <div class="quick-tools">
+            <button class="tool-btn reality-generator-btn" id="realityGeneratorBtn">
+                <span class="tool-icon">⚡</span>
+                <span class="tool-text">Reality Check Generator</span>
+            </button>
+            <button class="tool-btn emergency-motivation-btn" id="emergencyMotivationBtn">
+                <span class="tool-icon">🚨</span>
+                <span class="tool-text">Emergency Motivation</span>
+            </button>
+            <button class="tool-btn reflection-btn" id="reflectionBtn">
+                <span class="tool-icon">🪞</span>
+                <span class="tool-text">Quick Reflection</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Focus Mode Screen -->
+    <div id="focusMode" class="screen">
+        <div class="focus-header">
+            <div class="focus-celebration">
+                <div class="celebration-icon">🎯</div>
+                <div class="celebration-message" id="focusCelebration">
+                    FOCUS MODE ACTIVATED - Your future self thanks you
+                </div>
+            </div>
+        </div>
+
+        <div class="focus-stats">
+            <div class="focus-stat">
+                <div class="stat-number" id="focusStreak">1</div>
+                <div class="stat-label">Focus Streak</div>
+            </div>
+            <div class="focus-stat">
+                <div class="stat-number" id="todayFocusTime">0</div>
+                <div class="stat-label">Minutes Today</div>
+            </div>
+            <div class="focus-stat">
+                <div class="stat-number" id="blocksAvoided">1</div>
+                <div class="stat-label">Blocks Avoided</div>
+            </div>
+        </div>
+
+        <div class="focus-actions">
+            <button class="focus-action-btn start-timer-btn" id="startTimerBtn">
+                <span class="action-icon">⏰</span>
+                <span class="action-text">Start 25min Focus</span>
+            </button>
+            <button class="focus-action-btn deep-work-btn" id="deepWorkBtn">
+                <span class="action-icon">🎯</span>
+                <span class="action-text">Deep Work (90min)</span>
+            </button>
+            <button class="focus-action-btn quick-task-btn" id="quickTaskBtn">
+                <span class="action-icon">⚡</span>
+                <span class="action-text">Quick Task (15min)</span>
+            </button>
+        </div>
+
+        <div class="motivational-reminder">
+            <div class="reminder-text" id="motivationalReminder">
+                Champions are built in moments like this!
+            </div>
+        </div>
+
+        <button class="back-to-reality-btn" id="backToRealityBtn">← Back to Reality Check</button>
+    </div>
+
+    <!-- Consequences Screen -->
+    <div id="consequencesMode" class="screen">
+        <div class="consequences-header">
+            <div class="consequences-icon">💀</div>
+            <div class="consequences-title">WELCOME TO MEDIOCRITY</div>
+            <div class="consequences-subtitle">This is what giving up looks like</div>
+        </div>
+
+        <div class="consequences-message" id="consequencesMessage">
+            🏆 Every champion you admire got there by saying no to this exact moment
+        </div>
+
+        <div class="harsh-truths">
+            <h3>HARSH TRUTHS:</h3>
+            <ul class="truth-list">
+                <li>📈 While you scroll, others are building the life you want</li>
+                <li>🎯 The gap between you and your goals just got wider</li>
+                <li>🔥 This is how mediocrity is built - one wasted moment at a time</li>
+                <li>⚖️ You're choosing temporary pleasure over permanent progress</li>
+            </ul>
+        </div>
+
+        <div class="last-chance">
+            <h3>LAST CHANCE TO CHANGE YOUR MIND:</h3>
+            <button class="last-chance-btn" id="lastChanceBtn">
+                <span class="btn-icon">🔄</span>
+                <span class="btn-text">I WANT TO CHANGE</span>
+            </button>
+        </div>
+
+        <div class="proceed-warning">
+            <p>If you still want to proceed to waste time, you'll have to wait...</p>
+            <div class="countdown-timer" id="countdownTimer">10</div>
+            <button class="proceed-btn hidden" id="proceedBtn">Proceed to Waste Time</button>
+        </div>
+    </div>
+
+    <!-- All Quotes Overlay -->
+    <div id="allQuotesOverlay" class="overlay hidden">
+        <div class="overlay-content">
+            <div class="overlay-header">
+                <h2>🔥 ALL DEEP THOUGHTS</h2>
+                <button class="overlay-close" id="closeAllQuotes">×</button>
+            </div>
+            <div class="quotes-container" id="allQuotesContainer">
+                <!-- Quotes will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Mindfulness Center Overlay -->
+    <div id="mindfulnessOverlay" class="overlay mindfulness-overlay hidden">
+        <div class="mindfulness-content">
+            <div class="mindfulness-header">
+                <h2>🧘 Mindful Center</h2>
+                <button class="mindfulness-close" id="closeMindfulness">×</button>
+            </div>
+            
+            <div class="mindfulness-sections">
+                <!-- Breathing Exercises Section -->
+                <div class="mindfulness-section breathing-section">
+                    <h3>🫁 Breathing Exercises</h3>
+                    <div class="breathing-options">
+                        <button class="breathing-btn" data-type="478">
+                            <span class="breathing-name">4-7-8 Breathing</span>
+                            <span class="breathing-desc">Inhale 4, Hold 7, Exhale 8</span>
+                        </button>
+                        <button class="breathing-btn" data-type="box">
+                            <span class="breathing-name">Box Breathing</span>
+                            <span class="breathing-desc">Equal counts: 4-4-4-4</span>
+                        </button>
+                        <button class="breathing-btn" data-type="simple">
+                            <span class="breathing-name">Simple Breathing</span>
+                            <span class="breathing-desc">Natural rhythm: 3-6</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Breathing Animation -->
+                    <div class="breathing-animation hidden" id="breathingAnimation">
+                        <div class="breathing-circle" id="breathingCircle"></div>
+                        <div class="breathing-instruction" id="breathingInstruction">Breathe</div>
+                        <div class="breathing-controls">
+                            <button class="breathing-control-btn" id="stopBreathingBtn">Stop</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mindful Quotes Section -->
+                <div class="mindfulness-section quotes-section">
+                    <h3>💭 Mindful Quotes</h3>
+                    <div class="mindful-quote-display">
+                        <div class="mindful-quote" id="mindfulQuote">
+                            Be present in all things and thankful for all things. — Maya Angelou
+                        </div>
+                        <button class="new-quote-btn" id="newMindfulQuoteBtn">New Quote</button>
+                    </div>
+                </div>
+
+                <!-- Meditation Timers Section -->
+                <div class="mindfulness-section timers-section">
+                    <h3>⏱️ Meditation Timers</h3>
+                    <div class="meditation-timers">
+                        <button class="meditation-timer-btn" data-duration="180">
+                            <span class="timer-duration">3 Minutes</span>
+                            <span class="timer-desc">Quick Reset</span>
+                        </button>
+                        <button class="meditation-timer-btn" data-duration="300">
+                            <span class="timer-duration">5 Minutes</span>
+                            <span class="timer-desc">Gentle Focus</span>
+                        </button>
+                        <button class="meditation-timer-btn" data-duration="600">
+                            <span class="timer-duration">10 Minutes</span>
+                            <span class="timer-desc">Deep Calm</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Journal Overlay -->
+    <div id="journalOverlay" class="overlay hidden">
+        <div class="overlay-content">
+            <div class="overlay-header">
+                <h2>📝 CLEAR MY MIND</h2>
+                <button class="overlay-close" id="closeJournal">×</button>
+            </div>
+            <div class="journal-content">
+                <div class="journal-prompt">
+                    <p>What thoughts are cluttering your mind right now? Write them down to clear your headspace:</p>
+                </div>
+                <textarea class="journal-input" id="journalInput" placeholder="Pour your thoughts here... be honest with yourself."></textarea>
+                <div class="journal-actions">
+                    <button class="btn btn--primary" id="saveJournalBtn">Save & Clear Mind</button>
+                    <button class="btn btn--secondary" id="clearJournalBtn">Clear Text</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reality Generator Modal -->
+    <div id="realityModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚡ REALITY CHECK GENERATOR</h2>
+                <button class="modal-close" id="closeRealityModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="generated-reality" id="generatedReality">
+                    🔥 Reality check: You're procrastinating AGAIN
+                </div>
+                <div class="reality-actions">
+                    <button class="btn btn--primary" id="newRealityBtn">Generate New Reality Check</button>
+                    <button class="btn btn--secondary" id="closeRealityBtn">Face This Truth</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Motivation Modal -->
+    <div id="emergencyModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🚨 EMERGENCY MOTIVATION</h2>
+                <button class="modal-close" id="closeEmergencyModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="emergency-message" id="emergencyMessage">
+                    Your dreams are NOT negotiable!
+                </div>
+                <div class="emergency-actions">
+                    <button class="btn btn--primary" id="newEmergencyBtn">More Motivation</button>
+                    <button class="btn btn--secondary" id="backToFocusBtn">Get Back to Work</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reflection Modal -->
+    <div id="reflectionModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🪞 QUICK REFLECTION</h2>
+                <button class="modal-close" id="closeReflectionModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="reflection-content">
+                    <p class="reflection-prompt">What are you avoiding by being here?</p>
+                    <textarea class="reflection-input" id="reflectionInput" placeholder="Be honest with yourself..."></textarea>
+                    <div class="reflection-actions">
+                        <button class="btn btn--primary" id="saveReflectionBtn">Face This Truth</button>
+                        <button class="btn btn--secondary" id="skipReflectionBtn">Skip</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timer Interface -->
+    <div id="timerInterface" class="overlay hidden">
+        <div class="timer-content">
+            <div class="timer-display">
+                <div class="timer-circle">
+                    <svg class="timer-progress" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" class="timer-bg"></circle>
+                        <circle cx="50" cy="50" r="45" class="timer-fill" id="timerFill"></circle>
+                    </svg>
+                    <div class="timer-text">
+                        <div class="timer-time" id="timerTime">25:00</div>
+                        <div class="timer-label" id="timerLabel">Focus Time</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timer-controls">
+                <button class="timer-control-btn" id="pauseTimerBtn">⏸️ Pause</button>
+                <button class="timer-control-btn" id="stopTimerBtn">⏹️ Stop</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
